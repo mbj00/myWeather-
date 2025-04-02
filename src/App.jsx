@@ -4,17 +4,14 @@ import { FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-// import { API_KEY } from './constants';
-// import './App.css'
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+
 
 function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState();
   const [error, setError] = useState(null);
-  // let date = new Date();
-  const day = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
 
-  const API_KEY = `485a187ce93fdb77b2e26bd2f8e1323c`;
   const API_URL = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&id=524901&appid=${API_KEY}`
 
   const fetchWeather = async () => {
